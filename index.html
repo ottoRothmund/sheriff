@@ -3,153 +3,194 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sheriff of Nottingham ($SHERIFF)</title>
-<meta name="description" content="The Sheriff of Nottingham on Robinhood Chain. Every trade is taxed. Half burns $SHERIFF, half buys $INJOH and pays holders.">
+<title>Sheriff of Nottingham ($SHERIFF) · Road to #1 on Sinjoh</title>
+<meta name="description" content="$SHERIFF on Robinhood Chain. 50% of fees buy back and burn $SHERIFF, 50% buy $INJOH: a quarter burned, the rest airdropped to holders. Goal: #1 token on Sinjoh.">
 <meta property="og:title" content="Sheriff of Nottingham ($SHERIFF)">
-<meta property="og:description" content="Tax collector of Robinhood Chain. 50% of fees burn $SHERIFF. 50% buy $INJOH: a quarter burned, the rest airdropped to holders.">
+<meta property="og:description" content="Every trade is taxed. 62.5% burned, 37.5% airdropped as $INJOH. The Sheriff is coming for #1 on Sinjoh.">
 <meta property="og:image" content="public/og.jpg">
-<meta name="theme-color" content="#d9c8ea">
+<meta name="theme-color" content="#0c110b">
 <link rel="icon" type="image/png" href="public/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="ticker" aria-hidden="true">
-  <div class="ticker__track">
-    <span>the sheriff taxes every trade &nbsp;/&nbsp; half burns $SHERIFF &nbsp;/&nbsp; half buys $INJOH &nbsp;/&nbsp; holders get paid &nbsp;/&nbsp; robinhood chain 4663 &nbsp;/&nbsp; </span>
-    <span>the sheriff taxes every trade &nbsp;/&nbsp; half burns $SHERIFF &nbsp;/&nbsp; half buys $INJOH &nbsp;/&nbsp; holders get paid &nbsp;/&nbsp; robinhood chain 4663 &nbsp;/&nbsp; </span>
-  </div>
-</div>
+<div class="bg" aria-hidden="true"></div>
 
 <header class="nav">
-  <a class="nav__brand" href="#top"><img src="public/star.png" alt="" width="22" height="22"> $SHERIFF</a>
-  <nav class="nav__links">
-    <a href="#taxes">taxes</a>
-    <a href="#lore">lore</a>
-    <a href="#buy">buy</a>
-    <a class="nav__cta" href="https://www.ponsfamily.com/launchpad/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener">Trade $SHERIFF</a>
+  <a class="nav__brand" href="#top"><img src="public/star.png" alt="" width="28" height="28"><span>SHERIFF</span></a>
+  <nav class="nav__pill">
+    <a href="#race" class="is-active">Race</a>
+    <a href="#route">Fee route</a>
+    <a href="#buy">Buy</a>
+    <a href="#papers">Papers</a>
   </nav>
+  <div class="nav__right">
+    <span class="chip chip--live"><i></i>Robinhood</span>
+    <a class="btn btn--outline" href="https://www.ponsfamily.com/launchpad/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener">Trade $SHERIFF</a>
+  </div>
 </header>
 
 <main id="top">
 
 <section class="hero">
   <div class="hero__copy">
-    <p class="hero__eyebrow">now taxing robinhood chain</p>
-    <h1>The Sheriff of Nottingham</h1>
-    <p class="hero__sub">He came for Robin Hood's chain. Now every trade pays him, and every coin he takes, he burns.</p>
+    <div class="hero__badges">
+      <span class="pill" data-phase>Graduated</span>
+      <span class="pill pill--dim">Robinhood Chain · 4663</span>
+      <span class="pill pill--dim">Pons v2</span>
+    </div>
+    <h1>The Sheriff<br>of Nottingham</h1>
+    <p class="hero__lede">Paired with ETH. Every trade is taxed. Half the fees buy back and burn $SHERIFF. Half buy $INJOH, burn a quarter, and airdrop the rest to holders.</p>
+    <p class="hero__goal"><span class="lbl">The goal</span><strong>#1 token on Sinjoh.</strong> <span class="hero__goalnow">Currently <b data-rank>#?</b> of <b data-total>?</b>.</span></p>
     <div class="hero__actions">
-      <a class="btn btn--primary" href="https://www.ponsfamily.com/launchpad/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener">Trade $SHERIFF</a>
-      <a class="btn btn--ghost" href="https://dexscreener.com/robinhood/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener">Dexscreener</a>
+      <a class="btn btn--primary" href="https://www.ponsfamily.com/launchpad/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener">Buy $SHERIFF <span class="arr">→</span></a>
+      <a class="btn btn--ghost" href="https://app.sinjoh.com/token/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener">View on Sinjoh</a>
     </div>
     <button class="ca" type="button" data-copy="0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" aria-label="Copy contract address">
-      <span class="ca__label">ca</span>
+      <span class="ca__lbl">Contract</span>
       <code>0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c</code>
       <span class="ca__hint">copy</span>
     </button>
   </div>
-  <figure class="hero__art">
-    <img class="hero__img" src="public/sheriff.png" alt="The Sheriff of Nottingham, a smug wolf in an orange tunic with a gold star, leaning on a wooden post" width="1080" height="1080" fetchpriority="high">
-    <img class="sticker sticker--star" src="public/star.png" alt="" width="120" height="120">
-    <img class="sticker sticker--medal" src="public/medal.png" alt="" width="110" height="110">
-    <figcaption class="hero__tag">pays taxes. burns them.</figcaption>
-  </figure>
-</section>
 
-<section class="stats" aria-label="Live market data">
-  <dl class="stats__grid" id="stats">
-    <div><dt>price</dt><dd data-stat="price">loading</dd></div>
-    <div><dt>fdv</dt><dd data-stat="fdv">loading</dd></div>
-    <div><dt>liquidity</dt><dd data-stat="liq">loading</dd></div>
-    <div><dt>24h volume</dt><dd data-stat="vol">loading</dd></div>
-    <div><dt>24h</dt><dd data-stat="chg">loading</dd></div>
-  </dl>
-  <p class="stats__src">SHERIFF / WETH on Pons v2. Data from GeckoTerminal, refreshes every minute. <a href="https://www.geckoterminal.com/robinhood/pools/0xe2efd26941019c47daa5e7bd7f7a1b709816fcc5429ceac1ed3cb58e94b30566" target="_blank" rel="noopener">Full chart</a></p>
-</section>
-
-<section class="taxes" id="taxes">
-  <h2>Where the taxes go</h2>
-  <p class="taxes__lede">Every swap on the SHERIFF / ETH pair pays a fee. The Sinjoh router splits it two ways. Nothing goes to a team wallet.</p>
-
-  <div class="flow reveal">
-    <div class="flow__src">
-      <span class="flow__pct">100%</span>
-      <span class="flow__what">trading fees, collected in ETH</span>
+  <aside class="card card--token">
+    <div class="card__head">
+      <img class="logo logo--lg" src="public/sheriff.png" alt="" width="56" height="56">
+      <div class="card__id"><b>Sheriff of Nottingham</b><span>$SHERIFF</span></div>
+      <span class="pill" data-phase>Graduated</span>
     </div>
+    <div class="card__big" data-stat="mcap">$…</div>
+    <p class="card__desc">The Sheriff of Nottingham is paired w/ ETH. 50% of fees buy back and burn $SHERIFF. 50% of fees buy $INJOH, burning 25% of them and airdropping you the rest.</p>
+    <dl class="kv">
+      <div><dt>Market cap</dt><dd data-stat="mcap2">…</dd></div>
+      <div><dt>Total volume</dt><dd data-stat="voltotal">…</dd></div>
+      <div><dt>Price</dt><dd data-stat="price">…</dd></div>
+      <div><dt>24h</dt><dd data-stat="chg">…</dd></div>
+      <div><dt>Liquidity</dt><dd data-stat="liq">…</dd></div>
+      <div><dt>Launchpad</dt><dd>Pons v2</dd></div>
+      <div class="kv__wide"><dt>Contract</dt><dd>0xB40…51C</dd></div>
+    </dl>
+    <div class="route">
+      <span class="route__lbl">Fee route</span>
+      <div class="route__grid">
+        <div><span>Burn</span><b>62.5%</b></div>
+        <div><span>Airdrops</span><b>37.5%</b></div>
+        <div><span>Creator</span><b>0%</b></div>
+        <div><span>Liquidity</span><b>0%</b></div>
+      </div>
+    </div>
+    <a class="btn btn--wide" href="https://app.sinjoh.com/token/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener">View token page <span class="arr">→</span></a>
+  </aside>
+</section>
+
+<section class="race" id="race">
+  <div class="sec__head">
+    <div>
+      <p class="eyebrow">Sinjoh leaderboard</p>
+      <h2>Road to #1</h2>
+    </div>
+    <p class="sec__meta"><span data-total>…</span> markets on Sinjoh · ranked by market cap · <span data-updated>loading</span></p>
+  </div>
+
+  <div class="race__top">
+    <div class="card card--rank">
+      <span class="lbl">Current rank</span>
+      <div class="rank"><span class="rank__hash">#</span><span data-rank-num>?</span><span class="rank__of">of <span data-total>?</span></span></div>
+      <p class="rank__note" data-rank-note>Fetching the board…</p>
+    </div>
+    <div class="card card--gap">
+      <span class="lbl">Distance to #1</span>
+      <div class="gap" data-gap>$…</div>
+      <div class="bar" role="img" aria-label="Progress toward the number one market cap">
+        <div class="bar__fill" data-bar style="width:0%"></div>
+        <div class="bar__mark bar__mark--you" data-bar-you style="left:0%"><img src="public/favicon.png" alt=""><i>you</i></div>
+        <div class="bar__mark bar__mark--one" data-bar-one><i>#1</i></div>
+      </div>
+      <p class="gap__note" data-gap-note>Market cap needed to overtake the leader.</p>
+    </div>
+    <div class="card card--next">
+      <span class="lbl">Next to overtake</span>
+      <div class="next" data-next>
+        <span class="next__empty">…</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="dir">
+    <div class="dir__head"><span class="lbl lbl--green">Token directory</span><span class="dir__count"><span data-total>…</span> markets</span></div>
+    <div class="grid" id="board" aria-live="polite">
+      <div class="tcard tcard--skel"></div><div class="tcard tcard--skel"></div><div class="tcard tcard--skel"></div><div class="tcard tcard--skel"></div>
+      <div class="tcard tcard--skel"></div><div class="tcard tcard--skel"></div><div class="tcard tcard--skel"></div><div class="tcard tcard--skel"></div>
+    </div>
+    <p class="dir__src">Live from <a href="https://app.sinjoh.com/" target="_blank" rel="noopener">app.sinjoh.com</a>. Top 12 by market cap. Refreshes every minute.</p>
+  </div>
+</section>
+
+<section class="routesec" id="route">
+  <div class="sec__head">
+    <div>
+      <p class="eyebrow">Where the taxes go</p>
+      <h2>Fee route</h2>
+    </div>
+    <p class="sec__meta">Every swap on SHERIFF / WETH pays a fee in ETH. The Sinjoh router splits it. No creator cut. No team wallet. Creator cannot repoint it.</p>
+  </div>
+  <div class="flow">
+    <div class="flow__src card">
+      <span class="lbl">Input</span>
+      <b class="flow__pct">100%</b>
+      <span class="flow__what">trading fees, in ETH</span>
+    </div>
+    <div class="flow__arrows" aria-hidden="true"><span></span><span></span></div>
     <div class="flow__branches">
-      <div class="flow__branch flow__branch--burn">
-        <span class="flow__pct">50%</span>
-        <h3>buys back $SHERIFF</h3>
-        <p>Every token bought is sent to the burn address. Gone for good.</p>
-        <ul class="flow__out">
-          <li><b>50%</b> of all fees <span>burned as $SHERIFF</span></li>
-        </ul>
+      <div class="card flow__branch flow__branch--burn">
+        <div class="flow__row"><b class="flow__pct">50%</b><span class="pill pill--burn">Buyback</span></div>
+        <h3>Buys back $SHERIFF and burns it</h3>
+        <p>Every token bought with fees goes straight to the burn address. Supply only goes down.</p>
+        <ul class="outs"><li><b>50%</b><span>of fees burned as $SHERIFF</span></li></ul>
       </div>
-      <div class="flow__branch flow__branch--injoh">
-        <span class="flow__pct">50%</span>
-        <h3>buys $INJOH</h3>
-        <p>A quarter of the $INJOH is burned. The rest is airdropped to $SHERIFF holders.</p>
-        <ul class="flow__out">
-          <li><b>12.5%</b> of all fees <span>burned as $INJOH</span></li>
-          <li><b>37.5%</b> of all fees <span>airdropped to you</span></li>
+      <div class="card flow__branch flow__branch--injoh">
+        <div class="flow__row"><b class="flow__pct">50%</b><span class="pill pill--gold">$INJOH</span></div>
+        <h3>Buys $INJOH</h3>
+        <p>A quarter of it is burned. The rest is airdropped to $SHERIFF holders every 24 hours. No claiming.</p>
+        <ul class="outs">
+          <li><b>12.5%</b><span>of fees burned as $INJOH</span></li>
+          <li><b>37.5%</b><span>of fees airdropped to you as $INJOH</span></li>
         </ul>
       </div>
     </div>
   </div>
-
-  <div class="totals reveal">
-    <div class="totals__cell totals__cell--burn">
-      <span class="totals__num">62.5%</span>
-      <span class="totals__lbl">of every fee is destroyed</span>
-    </div>
-    <div class="totals__cell totals__cell--drop">
-      <span class="totals__num">37.5%</span>
-      <span class="totals__lbl">of every fee lands in holder wallets as $INJOH</span>
-    </div>
-  </div>
-  <p class="taxes__note">Routing is on-chain and anyone can trigger it. Watch burns, airdrops and the next payout on <a href="https://app.sinjoh.com/token/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener">Sinjoh</a>.</p>
-</section>
-
-<section class="lore" id="lore">
-  <div class="lore__inner reveal">
-    <img class="lore__face" src="public/face.png" alt="" width="220" height="220">
-    <blockquote>
-      <p>Robin Hood robbed the rich and gave to the poor.</p>
-      <p>The Sheriff robs the traders and gives to the fire.</p>
-      <p>And a little bit to you, because he is not entirely without heart.</p>
-    </blockquote>
-    <p class="lore__sig">signed, the Sheriff of Nottingham, Robinhood Chain</p>
+  <div class="totals">
+    <div class="card totals__cell"><b>62.5%</b><span>of every fee is destroyed</span></div>
+    <div class="card totals__cell totals__cell--gold"><b>37.5%</b><span>of every fee lands in holder wallets</span></div>
+    <div class="card totals__cell totals__cell--dim"><b>24h</b><span>airdrop interval</span></div>
   </div>
 </section>
 
 <section class="buy" id="buy">
-  <h2>How to get taxed</h2>
+  <div class="sec__head">
+    <div>
+      <p class="eyebrow">Join the posse</p>
+      <h2>How to get taxed</h2>
+    </div>
+  </div>
   <ol class="steps">
-    <li class="reveal">
-      <h3>Bridge ETH to Robinhood Chain</h3>
-      <p>Chain id 4663. Add it to your wallet and bring some ETH for gas and the buy.</p>
-    </li>
-    <li class="reveal">
-      <h3>Swap on Pons</h3>
-      <p>The SHERIFF / WETH pair lives on Pons v2. Paste the contract address, never a search result.</p>
-      <a class="btn btn--primary" href="https://www.ponsfamily.com/launchpad/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener">Trade $SHERIFF</a>
-    </li>
-    <li class="reveal">
-      <h3>Hold and collect</h3>
-      <p>Airdrops of $INJOH go out on a schedule to holders. No claiming, no staking, no forms.</p>
-    </li>
+    <li class="card"><span class="step__n">01</span><h3>Bridge ETH to Robinhood Chain</h3><p>Chain id 4663. Add it to your wallet and bring ETH for gas and the buy.</p></li>
+    <li class="card"><span class="step__n">02</span><h3>Swap on Pons</h3><p>SHERIFF / WETH lives on Pons v2. Paste the contract address, never a search result.</p><a class="btn btn--primary" href="https://www.ponsfamily.com/launchpad/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener">Trade $SHERIFF</a></li>
+    <li class="card"><span class="step__n">03</span><h3>Hold and collect</h3><p>$INJOH airdrops go out daily to holders. Watch the countdown on Sinjoh. Then tell a friend. #1 needs a mob.</p></li>
   </ol>
 </section>
 
-<section class="links">
-  <h2>Papers</h2>
-  <div class="links__grid">
-    <a href="https://app.sinjoh.com/token/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener"><b>Sinjoh</b><span>burns, airdrops, routing</span></a>
-    <a href="https://www.ponsfamily.com/launchpad/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener"><b>Pons</b><span>trade</span></a>
-    <a href="https://dexscreener.com/robinhood/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener"><b>Dexscreener</b><span>chart</span></a>
-    <a href="https://www.geckoterminal.com/robinhood/pools/0xe2efd26941019c47daa5e7bd7f7a1b709816fcc5429ceac1ed3cb58e94b30566" target="_blank" rel="noopener"><b>GeckoTerminal</b><span>chart</span></a>
-    <a href="https://v2.bubblemaps.io/map?chain=robinhood&address=0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener"><b>Bubblemaps</b><span>holders</span></a>
-    <a href="https://robinhoodchain.blockscout.com/address/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener"><b>Blockscout</b><span>contract</span></a>
+<section class="papers" id="papers">
+  <div class="sec__head"><div><p class="eyebrow">Papers</p><h2>Links</h2></div></div>
+  <div class="links">
+    <a class="card" href="https://app.sinjoh.com/token/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener"><b>Sinjoh</b><span>burns, airdrops, routing</span></a>
+    <a class="card" href="https://www.ponsfamily.com/launchpad/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener"><b>Pons</b><span>trade</span></a>
+    <a class="card" href="https://dexscreener.com/robinhood/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener"><b>Dexscreener</b><span>chart</span></a>
+    <a class="card" href="https://www.geckoterminal.com/robinhood/pools/0xe2efd26941019c47daa5e7bd7f7a1b709816fcc5429ceac1ed3cb58e94b30566" target="_blank" rel="noopener"><b>GeckoTerminal</b><span>chart</span></a>
+    <a class="card" href="https://v2.bubblemaps.io/map?chain=robinhood&address=0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener"><b>Bubblemaps</b><span>holders</span></a>
+    <a class="card" href="https://robinhoodchain.blockscout.com/address/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener"><b>Blockscout</b><span>contract</span></a>
   </div>
 </section>
 
@@ -157,13 +198,13 @@
 
 <footer class="foot">
   <div class="foot__addr">
-    <div><span>token</span><code>0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c</code></div>
-    <div><span>router deposit</span><code>0x33950f67796c47d34d4965f484340289dcEc6037</code></div>
-    <div><span>sinjoh router</span><code>0xea0E0125D49CD48DD8E59C6e36898fBa02645bA1</code></div>
-    <div><span>chain</span><code>Robinhood Chain, id 4663</code></div>
+    <div><span>Token</span><code>0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c</code></div>
+    <div><span>Router deposit</span><code>0x33950f67796c47d34d4965f484340289dcEc6037</code></div>
+    <div><span>Sinjoh router</span><code>0xea0E0125D49CD48DD8E59C6e36898fBa02645bA1</code></div>
+    <div><span>$INJOH</span><code>0x2cC0FAC44B8252f6B10208B091aFf2c94B4da77D</code></div>
   </div>
   <p class="foot__risk">You sign every transaction yourself and most cannot be undone. Tokens can swing wildly or go to zero. This site holds nothing, promises nothing, and is not financial advice. The Sheriff is a cartoon wolf.</p>
-  <p class="foot__tiny">$SHERIFF <span class="blink">est. 2026</span> robinhood chain</p>
+  <p class="foot__tiny">$SHERIFF · Robinhood Chain · launched with Sinjoh · not affiliated with Sinjoh or Pons</p>
 </footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite">copied</div>

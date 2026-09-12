@@ -165,20 +165,103 @@
     });
   }
 
-  // --- GeckoTerminal price ---
+  // --- Dexscreener pair stats ---
+  var DS = 'https://api.dexscreener.com/latest/dex/pairs/robinhood/0xe2efd26941019c47daa5e7bd7f7a1b709816fcc5429ceac1ed3cb58e94b30566';
   function loadPrice() {
-    getJSON(POOL).then(function (d) {
-      var a = d.data.attributes;
-      setAll('[data-stat="price"]', price(a.base_token_price_usd));
-      setAll('[data-stat="liq"]', usd(a.reserve_in_usd));
-      var c = Number(a.price_change_percentage && a.price_change_percentage.h24);
-      setAll('[data-stat="chg"]', isFinite(c) ? (c > 0 ? '+' : '') + c.toFixed(1) + '%' : null, c > 0 ? 'up' : c < 0 ? 'down' : '');
+    getJSON(DS).then(function (d) {
+      var p = (d.pairs && d.pairs[0]) || d.pair;
+      if (!p) throw new Error('no pair');
+      setAll('[data-stat="price"]', price(p.priceUsd));
+      setAll('[data-stat="liq"]', usd(p.liquidity && p.liquidity.usd));
+      setAll('[data-stat="vol"]', usd(p.volume && p.volume.h24));
+      var t = (p.txns && p.txns.h24) || {};
+      setAll('[data-stat="buys"]', t.buys != null ? String(t.buys) : 'n/a');
+      setAll('[data-stat="sells"]', t.sells != null ? String(t.sells) : 'n/a');
+      var c = Number(p.priceChange && p.priceChange.h24);
+      setAll('[data-stat="chg"]', isFinite(c) ? (c > 0 ? '+' : '') + c.toFixed(1) + '%' : null, 'chg ' + (c > 0 ? 'up' : c < 0 ? 'down' : ''));
     }).catch(function () {
-      setAll('[data-stat="price"]', 'n/a'); setAll('[data-stat="liq"]', 'n/a'); setAll('[data-stat="chg"]', 'n/a');
+      ['price', 'liq', 'vol', 'buys', 'sells', 'chg'].forEach(function (k) { setAll('[data-stat="' + k + '"]', 'n/a'); });
     });
   }
 
-  loadBoard(); loadPrice();
+  // --- burned (Sinjoh token-burn via proxy) ---
+  function loadBurn() {
+    getJSON(PROXY + 'token-burn').then(function (d) {
+      var burned = Number(d.burned) / 1e18, total = Number(d.totalSupply) / 1e18;
+      if (!isFinite(burned) || !total) throw new Error('no burn');
+      setAll('[data-stat="burned"]', (burned / total * 100).toFixed(2) + '% · ' + (burned / 1e6).toFixed(1) + 'M');
+    }).catch(function () { setAll('[data-stat="burned"]', 'n/a'); });
+  }
+
+  // --- live trades feed + notifications ---
+  var TRADES = POOL + '/trades?trade_volume_in_usd_greater_than=0';
+  var seen = {}; var first = true;
+  var feed = document.getElementById('feed');
+  var notes = document.createElement('div'); notes.className = 'notes'; document.body.appendChild(notes);
+  function ago(iso) {
+    var s = Math.max(0, (Date.now() - new Date(iso).getTime()) / 1000);
+    if (s < 60) return Math.floor(s) + 's ago';
+    if (s < 3600) return Math.floor(s / 60) + 'm ago';
+    if (s < 86400) return Math.floor(s / 3600) + 'h ago';
+    return Math.floor(s / 86400) + 'd ago';
+  }
+  function tokAmt(n) {
+    n = Number(n); if (!isFinite(n)) return '';
+    if (n >= 1e9) return (n / 1e9).toFixed(2) + 'B';
+    if (n >= 1e6) return (n / 1e6).toFixed(2) + 'M';
+    if (n >= 1e3) return (n / 1e3).toFixed(1) + 'K';
+    return n.toFixed(0);
+  }
+  function norm(t) {
+    var a = t.attributes; var buy = a.kind === 'buy';
+    return {
+      id: t.id || a.tx_hash, buy: buy, kind: a.kind, ts: a.block_timestamp, tx: a.tx_hash,
+      who: a.tx_from_address, usdv: Number(a.volume_in_usd),
+      sher: buy ? Number(a.to_token_amount) : Number(a.from_token_amount),
+      eth: buy ? Number(a.from_token_amount) : Number(a.to_token_amount),
+      px: buy ? Number(a.price_to_in_usd) : Number(a.price_from_in_usd)
+    };
+  }
+  function trRow(x) {
+    return '<a class="tr tr--' + x.kind + '" href="https://robinhoodchain.blockscout.com/tx/' + x.tx + '" target="_blank" rel="noopener">' +
+      '<span class="tr__kind">' + x.kind + '</span>' +
+      '<span class="tr__mid"><b>' + tokAmt(x.sher) + ' SHERIFF</b><span>' + short(x.who) + ' · ' + x.eth.toFixed(4) + ' ETH</span></span>' +
+      '<span class="tr__right"><b>' + usd(x.usdv) + '</b><span>' + ago(x.ts) + '</span></span></a>';
+  }
+  function notify(x) {
+    var n = document.createElement('div');
+    n.className = 'note note--' + x.kind;
+    n.innerHTML = '<span class="note__k">' + x.kind + '</span><span class="note__b"><b>' + usd(x.usdv) + ' · ' + tokAmt(x.sher) + ' SHERIFF</b><span>' + short(x.who) + ' ' + (x.buy ? 'paid the Sheriff' : 'fled Nottingham') + '</span></span>';
+    n.addEventListener('click', function () { window.open('https://robinhoodchain.blockscout.com/tx/' + x.tx, '_blank', 'noopener'); });
+    notes.appendChild(n);
+    while (notes.children.length > 4) notes.removeChild(notes.firstChild);
+    setTimeout(function () { n.classList.add('out'); setTimeout(function () { n.remove(); }, 320); }, 7000);
+  }
+  function loadTrades() {
+    getJSON(TRADES).then(function (d) {
+      var list = (d.data || []).map(norm).filter(function (x) { return isFinite(x.usdv) && x.usdv > 0; });
+      list.sort(function (a, b) { return new Date(b.ts) - new Date(a.ts); });
+      var fresh = list.filter(function (x) { return !seen[x.id]; });
+      list.forEach(function (x) { seen[x.id] = 1; });
+      if (list.length) {
+        feed.innerHTML = list.slice(0, 40).map(trRow).join('');
+        var b = 0, s = 0; list.forEach(function (x) { if (x.buy) b++; else s++; });
+        setAll('[data-feed-meta]', b + ' buys · ' + s + ' sells · last ' + list.length);
+      } else if (first) {
+        feed.innerHTML = '<li class="feed__empty">No trades yet.</li>';
+      }
+      if (!first) {
+        fresh.slice(0, 3).reverse().forEach(function (x, i) { setTimeout(function () { notify(x); }, i * 500); });
+      }
+      first = false;
+    }).catch(function () {
+      if (first) feed.innerHTML = '<li class="feed__empty">Trade feed unavailable.</li>';
+    });
+  }
+
+  loadBoard(); loadPrice(); loadBurn(); loadTrades();
   setInterval(loadBoard, 60000);
-  setInterval(loadPrice, 60000);
+  setInterval(loadPrice, 30000);
+  setInterval(loadBurn, 120000);
+  setInterval(loadTrades, 15000);
 })();

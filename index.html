@@ -8,7 +8,7 @@
 <meta property="og:title" content="Sheriff of Nottingham ($SHERIFF)">
 <meta property="og:description" content="Every trade is taxed. 62.5% burned, 37.5% airdropped as $INJOH. The Sheriff is coming for #1 on Sinjoh.">
 <meta property="og:image" content="public/og.jpg">
-<meta name="theme-color" content="#0c110b">
+<meta name="theme-color" content="#0b0f0a">
 <link rel="icon" type="image/png" href="public/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,54 +35,75 @@
 <main id="top">
 
 <section class="hero">
-  <div class="hero__copy">
-    <div class="hero__badges">
-      <span class="pill" data-phase>Graduated</span>
-      <span class="pill pill--dim">Robinhood Chain · 4663</span>
-      <span class="pill pill--dim">Pons v2</span>
-    </div>
-    <h1>The Sheriff<br>of Nottingham</h1>
-    <p class="hero__lede">Paired with ETH. Every trade is taxed. Half the fees buy back and burn $SHERIFF. Half buy $INJOH, burn a quarter, and airdrop the rest to holders.</p>
-    <p class="hero__goal"><span class="lbl">The goal</span><strong>#1 token on Sinjoh.</strong> <span class="hero__goalnow">Currently <b data-rank>#?</b> of <b data-total>?</b>.</span></p>
-    <div class="hero__actions">
-      <a class="btn btn--primary" href="https://www.ponsfamily.com/launchpad/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener">Buy $SHERIFF <span class="arr">→</span></a>
-      <a class="btn btn--ghost" href="https://app.sinjoh.com/token/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener">View on Sinjoh</a>
-    </div>
-    <button class="ca" type="button" data-copy="0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" aria-label="Copy contract address">
-      <span class="ca__lbl">Contract</span>
-      <code>0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c</code>
-      <span class="ca__hint">copy</span>
-    </button>
-  </div>
-
-  <aside class="card card--token">
-    <div class="card__head">
+  <div class="hero__top">
+    <div class="hero__id">
       <img class="logo logo--lg" src="public/sheriff.png" alt="" width="56" height="56">
-      <div class="card__id"><b>Sheriff of Nottingham</b><span>$SHERIFF</span></div>
-      <span class="pill" data-phase>Graduated</span>
-    </div>
-    <div class="card__big" data-stat="mcap">$…</div>
-    <p class="card__desc">The Sheriff of Nottingham is paired w/ ETH. 50% of fees buy back and burn $SHERIFF. 50% of fees buy $INJOH, burning 25% of them and airdropping you the rest.</p>
-    <dl class="kv">
-      <div><dt>Market cap</dt><dd data-stat="mcap2">…</dd></div>
-      <div><dt>Total volume</dt><dd data-stat="voltotal">…</dd></div>
-      <div><dt>Price</dt><dd data-stat="price">…</dd></div>
-      <div><dt>24h</dt><dd data-stat="chg">…</dd></div>
-      <div><dt>Liquidity</dt><dd data-stat="liq">…</dd></div>
-      <div><dt>Launchpad</dt><dd>Pons v2</dd></div>
-      <div class="kv__wide"><dt>Contract</dt><dd>0xB40…51C</dd></div>
-    </dl>
-    <div class="route">
-      <span class="route__lbl">Fee route</span>
-      <div class="route__grid">
-        <div><span>Burn</span><b>62.5%</b></div>
-        <div><span>Airdrops</span><b>37.5%</b></div>
-        <div><span>Creator</span><b>0%</b></div>
-        <div><span>Liquidity</span><b>0%</b></div>
+      <div>
+        <h1>Sheriff of Nottingham <span class="hero__sym">$SHERIFF</span></h1>
+        <div class="hero__badges">
+          <span class="pill" data-phase>Graduated</span>
+          <span class="pill pill--dim">Robinhood Chain · 4663</span>
+          <span class="pill pill--dim">Pons v2</span>
+          <span class="pill pill--gold">Goal: #1 on Sinjoh</span>
+        </div>
       </div>
     </div>
-    <a class="btn btn--wide" href="https://app.sinjoh.com/token/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener">View token page <span class="arr">→</span></a>
-  </aside>
+    <div class="hero__actions">
+      <button class="ca" type="button" data-copy="0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" aria-label="Copy contract address">
+        <span class="ca__lbl">CA</span>
+        <code>0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c</code>
+        <span class="ca__hint">copy</span>
+      </button>
+      <a class="btn btn--primary" href="https://www.ponsfamily.com/launchpad/0xB40921cb9e3EDE2B3F0EdFb26F652f2739FDb51c" target="_blank" rel="noopener">Buy $SHERIFF <span class="arr">→</span></a>
+    </div>
+  </div>
+
+  <div class="big">
+    <div class="card big__cell big__cell--rank">
+      <span class="lbl">Sinjoh rank</span>
+      <div class="big__val"><span class="big__hash">#</span><span data-rank-num>?</span><span class="big__of">of <span data-total>?</span></span></div>
+      <span class="big__sub" data-rank-note>Fetching the board…</span>
+    </div>
+    <div class="card big__cell">
+      <span class="lbl">Market cap</span>
+      <div class="big__val" data-stat="mcap">$…</div>
+      <span class="big__sub"><span data-stat="chg" class="chg">…</span> 24h</span>
+    </div>
+    <div class="card big__cell big__cell--gap">
+      <span class="lbl">To #1</span>
+      <div class="big__val" data-gap>$…</div>
+      <span class="big__sub" data-gap-note>Market cap needed to pass the leader.</span>
+    </div>
+    <div class="card big__cell big__cell--mini">
+      <div><span class="lbl">Price</span><b data-stat="price">…</b></div>
+      <div><span class="lbl">Liquidity</span><b data-stat="liq">…</b></div>
+      <div><span class="lbl">24h volume</span><b data-stat="vol">…</b></div>
+      <div><span class="lbl">Total volume</span><b data-stat="voltotal">…</b></div>
+      <div><span class="lbl">24h buys / sells</span><b><span class="up" data-stat="buys">…</span> / <span class="down" data-stat="sells">…</span></b></div>
+      <div><span class="lbl">Burned</span><b data-stat="burned">…</b></div>
+    </div>
+  </div>
+
+  <div class="mkt">
+    <div class="card mkt__chart">
+      <div class="mkt__head">
+        <span class="lbl lbl--green">SHERIFF / WETH · Dexscreener</span>
+        <a class="mkt__ext" href="https://dexscreener.com/robinhood/0xe2efd26941019c47daa5e7bd7f7a1b709816fcc5429ceac1ed3cb58e94b30566" target="_blank" rel="noopener">Open ↗</a>
+      </div>
+      <div class="chart">
+        <iframe src="https://dexscreener.com/robinhood/0xe2efd26941019c47daa5e7bd7f7a1b709816fcc5429ceac1ed3cb58e94b30566?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartLeftToolbar=0&chartTheme=dark&theme=dark&chartStyle=1&chartType=usd&interval=15" title="SHERIFF / WETH chart" loading="lazy" allow="clipboard-write"></iframe>
+      </div>
+    </div>
+    <div class="card mkt__feed">
+      <div class="mkt__head">
+        <span class="lbl lbl--green"><i class="dot"></i>Live trades</span>
+        <span class="mkt__count" data-feed-meta>…</span>
+      </div>
+      <ul class="feed" id="feed" aria-live="polite">
+        <li class="feed__empty">Loading trades…</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <section class="race" id="race">
@@ -95,26 +116,18 @@
   </div>
 
   <div class="race__top">
-    <div class="card card--rank">
-      <span class="lbl">Current rank</span>
-      <div class="rank"><span class="rank__hash">#</span><span data-rank-num>?</span><span class="rank__of">of <span data-total>?</span></span></div>
-      <p class="rank__note" data-rank-note>Fetching the board…</p>
+    <div class="card card--next">
+      <span class="lbl">Next to overtake</span>
+      <div class="next" data-next><span class="next__empty">…</span></div>
     </div>
-    <div class="card card--gap">
-      <span class="lbl">Distance to #1</span>
-      <div class="gap" data-gap>$…</div>
+    <div class="card card--bar">
+      <span class="lbl">Progress to #1</span>
       <div class="bar" role="img" aria-label="Progress toward the number one market cap">
         <div class="bar__fill" data-bar style="width:0%"></div>
         <div class="bar__mark bar__mark--you" data-bar-you style="left:0%"><img src="public/favicon.png" alt=""><i>you</i></div>
-        <div class="bar__mark bar__mark--one" data-bar-one><i>#1</i></div>
+        <div class="bar__mark bar__mark--one"><i>#1</i></div>
       </div>
-      <p class="gap__note" data-gap-note>Market cap needed to overtake the leader.</p>
-    </div>
-    <div class="card card--next">
-      <span class="lbl">Next to overtake</span>
-      <div class="next" data-next>
-        <span class="next__empty">…</span>
-      </div>
+      <p class="gap__note">Log scale. Every buy moves the wolf right.</p>
     </div>
   </div>
 
